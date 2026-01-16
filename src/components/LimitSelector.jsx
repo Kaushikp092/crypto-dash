@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import React from "react";
+>>>>>>> 0f4af0f20450de238b5e65cdcb25012060c6e559
 
 const LimitSelector = ({ limit, onLimitChange }) => {
    return (
@@ -6,7 +10,11 @@ const LimitSelector = ({ limit, onLimitChange }) => {
          <select
             value={limit}
             id="limit"
+<<<<<<< HEAD
             onChange={(e) => {
+=======
+            onClick={(e) => {
+>>>>>>> 0f4af0f20450de238b5e65cdcb25012060c6e559
                onLimitChange(Number(e.target.value));
             }}
          >
