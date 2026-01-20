@@ -1,5 +1,3 @@
-import React from "react";
-
 const CoinCard = ({ coin }) => {
    return (
       <div>
@@ -20,7 +18,7 @@ const CoinCard = ({ coin }) => {
                }
             >
                {coin.price_change_percentage_24h.toFixed(2)} %
-            </p>{" "}
+            </p>
             {/* toFixed show 2 digit number after decimal . */}
             <p>Market Cap: {coin.market_cap.toLocaleString()}</p>
          </div>

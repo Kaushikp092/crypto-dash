@@ -17,7 +17,7 @@ const App = () => {
       const fetchCoins = async () => {
          try {
             const res = await fetch(
-               `${API_URL}&order=market_cap_desc&per_page=${limit}&page=1&sparkline=false`
+               `${API_URL}&order=market_cap_desc&per_page=${limit}&page=1&sparkline=false`,
             );
             if (!res.ok) throw new Error("Failed to fetch data");
             const data = await res.json();
@@ -39,7 +39,8 @@ const App = () => {
          );
       })
       .slice() //create a shalo copy
-      .sort((a, b) => { //building logic using switch
+      .sort((a, b) => {
+         //building logic using switch
          switch (sortBy) {
             case "market_cap_desc":
                return b.market_cap - a.market_cap;
@@ -49,12 +50,14 @@ const App = () => {
                return b.current_price - a.current_price;
             case "price_asc":
                return a.current_price - b.current_price;
-            case 'change_desc':
-              return b.price_change_percentage_24h -
-              a.price_change_percentage_24h
-            case 'change_asc':
-              return a.price_change_percentage_24h -
-              b.price_change_percentage_24h
+            case "change_desc":
+               return (
+                  b.price_change_percentage_24h - a.price_change_percentage_24h
+               );
+            case "change_asc":
+               return (
+                  a.price_change_percentage_24h - b.price_change_percentage_24h
+               );
          }
       });
 
